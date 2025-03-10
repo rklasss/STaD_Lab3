@@ -23,6 +23,13 @@ class TestGameGuess(unittest.TestCase):
         self.assertFalse(result)
         self.assertEqual(game.get_masked_word(), "______")
 
+    def test_win_condition(self):
+        game = Game("HI")
+        game.guess('H')
+        game.guess('I')
+        self.assertTrue(game.is_won())
+   
+
 
 if __name__ == '__main__':
     unittest.main()
