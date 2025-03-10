@@ -17,5 +17,12 @@ class TestGameGuess(unittest.TestCase):
         game.guess('P')
         self.assertEqual(game.get_masked_word(), "P_____")
 
+    def test_incorrect_guess(self):
+        game = Game("PYTHON")
+        result = game.guess('Z')
+        self.assertFalse(result)
+        self.assertEqual(game.get_masked_word(), "______")
+
+
 if __name__ == '__main__':
     unittest.main()
