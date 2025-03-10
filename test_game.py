@@ -11,5 +11,11 @@ class TestGameInitialization(unittest.TestCase):
         game = Game("PYTHON")
         self.assertEqual(game.get_masked_word(), "______")
 
+class TestGameGuess(unittest.TestCase):
+    def test_correct_guess(self):
+        game = Game("PYTHON")
+        game.guess('P')
+        self.assertEqual(game.get_masked_word(), "P_____")
+
 if __name__ == '__main__':
     unittest.main()
