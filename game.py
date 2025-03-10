@@ -13,3 +13,6 @@ class Game:
             return True
         else:
             return False
+        
+    def is_won(self):
+        return all(letter in self.guessed_letters for letter in self.secret_word)
