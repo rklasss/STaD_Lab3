@@ -6,5 +6,10 @@ class TestGameCreation(unittest.TestCase):
         game = Game("TEST")
         self.assertIsNotNone(game)
 
+class TestGameInitialization(unittest.TestCase):
+    def test_masked_word_initialization(self):
+        game = Game("PYTHON")
+        self.assertEqual(game.get_masked_word(), "______")
+
 if __name__ == '__main__':
     unittest.main()
